@@ -30,3 +30,14 @@ State-of-the-art transformer-based video instance segmentation (VIS) approaches 
 | MS-STS_r101                        | 51.1 | 73.2 | 59.0 | 48.3 | 58.7 |
 | MS-STS_swin                        | 61.0 | 85.2 | 68.6 | 54.7 | 66.4 |
 
+
+## Citation
+
+```
+@article{mssts2022,
+      title={Video Instance Segmentation via Multi-scale Spatio-temporal Split Attention Transformer}, 
+      author={Omkar Thawakar and Sanath Narayan and Jiale Cao and Hisham Cholakkal and Rao Muhammad Anwer and Muhammad Haris Khan and Salman Khan and Michael Felsberg and Fahad Shahbaz Khan},
+      journal={arXiv preprint arXiv:2203.13253},
+      year={2022},
+}
+```
