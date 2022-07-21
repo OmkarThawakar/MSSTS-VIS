@@ -2,7 +2,9 @@
 
 [Omkar Thawakar](https://scholar.google.com/citations?user=flvl5YQAAAAJ&hl=en), [Sanath Narayan](https://scholar.google.co.in/citations?user=Bx7EFGoAAAAJ&hl=en), [Jiale Cao](https://scholar.google.com/citations?user=6pPP1MQAAAAJ&hl=zh-CN), [Hisham Cholakkal](https://scholar.google.com/citations?user=bZ3YBRcAAAAJ&hl=zh-CN), [Rao Muhammad Anwer](https://scholar.google.com/citations?user=_KlvMVoAAAAJ&hl=zh-CN), [Muhammad Haris Khan](https://scholar.google.com/citations?user=ZgERfFwAAAAJ&hl=zh-CN), [Salman Khan](https://salman-h-khan.github.io/), [Michael Felsberg](https://scholar.google.com/citations?user=lkWfR08AAAAJ&hl=zh-CN), [Fahad Shahbaz Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en)
 
-Code will be coming soon !
+* ECCV 2022.
+
+* **(Code and models are under upload !)**
 
 ## :rocket: News
 * **(April 3, 2022)**
@@ -45,7 +47,7 @@ State-of-the-art transformer-based video instance segmentation (VIS) approaches 
 @article{mssts2022,
       title={Video Instance Segmentation via Multi-scale Spatio-temporal Split Attention Transformer}, 
       author={Omkar Thawakar and Sanath Narayan and Jiale Cao and Hisham Cholakkal and Rao Muhammad Anwer and Muhammad Haris Khan and Salman Khan and Michael Felsberg and Fahad Shahbaz Khan},
-      journal={arXiv preprint arXiv:2203.13253},
+      journal={Proc. European Conference on Computer Vision (ECCV)},
       year={2022},
 }
 ```
