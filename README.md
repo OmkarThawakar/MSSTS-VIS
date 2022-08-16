@@ -51,3 +51,6 @@ State-of-the-art transformer-based video instance segmentation (VIS) approaches 
       year={2022},
 }
 ```
+## Acknowledgement
+
+This repo is based on [SeqFormer](https://github.com/wjf5203/SeqFormer) , [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) and [VisTR](https://github.com/Epiphqny/VisTR). Thanks for their wonderful works.
