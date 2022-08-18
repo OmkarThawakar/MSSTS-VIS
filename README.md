@@ -40,6 +40,7 @@ State-of-the-art transformer-based video instance segmentation (VIS) approaches 
 | MS-STS_r101                        | 51.1 | 73.2 | 59.0 | 48.3 | 58.7 |
 | MS-STS_swin                        | 61.0 | 85.2 | 68.6 | 54.7 | 66.4 |
 
+<hr />
 
 ## Citation
 
@@ -51,6 +52,10 @@ State-of-the-art transformer-based video instance segmentation (VIS) approaches 
       year={2022},
 }
 ```
+
+## Contact
+If you have any question, please contact me at omkar.thawakar@mbzuai.ac.ae
+
 ## Acknowledgement
 
 This repo is based on [SeqFormer](https://github.com/wjf5203/SeqFormer) , [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) and [VisTR](https://github.com/Epiphqny/VisTR). Thanks for their wonderful works.
