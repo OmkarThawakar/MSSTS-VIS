@@ -84,7 +84,7 @@ coco
 
 
 The modified coco annotations 'coco_keepfor_ytvis19.json' for joint training can be downloaded from [[google]](https://drive.google.com/file/d/1dhfxtnu0oiolNyOWjf4CscBgb_tNg-K8/view?usp=sharing).
-Taken from SeqFormer.
+Taken from [SeqFormer](https://github.com/wjf5203/SeqFormer).
 ## 
 
 ### Training
