@@ -3,7 +3,7 @@
 set -x
 
 python3 -u main.py \
-    --dataset_file jointcoco \
+    --dataset_file YoutubeVIS \
     --epochs 12 \
     --lr 2e-4 \
     --lr_drop 4 10\
