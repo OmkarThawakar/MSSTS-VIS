@@ -151,6 +151,11 @@ class DeformableTransformerEncoderLayer(nn.Module):
         self.dropout3 = nn.Dropout(dropout)
         self.norm2 = nn.LayerNorm(d_model)
 
+        # Temporal Attention
+        self.temp_attn = MSDeformAttn(5, 4, 1, 4, 'encode')
+        self.dropout1 = nn.Dropout(dropout)
+        self.norm2 = nn.LayerNorm(5)
+
     @staticmethod
     def with_pos_embed(tensor, pos):
         return tensor if pos is None else tensor + pos
@@ -168,7 +173,9 @@ class DeformableTransformerEncoderLayer(nn.Module):
         src = self.norm1(src)
         # ffn
         src = self.forward_ffn(src)
-        return src
+
+
+        return src  
 
 
 class DeformableTransformerEncoder(nn.Module):
