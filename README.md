@@ -2,6 +2,8 @@
 
 [Omkar Thawakar](https://scholar.google.com/citations?user=flvl5YQAAAAJ&hl=en), [Sanath Narayan](https://scholar.google.co.in/citations?user=Bx7EFGoAAAAJ&hl=en), [Jiale Cao](https://scholar.google.com/citations?user=6pPP1MQAAAAJ&hl=zh-CN), [Hisham Cholakkal](https://scholar.google.com/citations?user=bZ3YBRcAAAAJ&hl=zh-CN), [Rao Muhammad Anwer](https://scholar.google.com/citations?user=_KlvMVoAAAAJ&hl=zh-CN), [Muhammad Haris Khan](https://scholar.google.com/citations?user=ZgERfFwAAAAJ&hl=zh-CN), [Salman Khan](https://salman-h-khan.github.io/), [Michael Felsberg](https://scholar.google.com/citations?user=lkWfR08AAAAJ&hl=zh-CN), [Fahad Shahbaz Khan](https://scholar.google.es/citations?user=zvaeYnUAAAAJ&hl=en) [ ECCV 2022 ]
 
+[![paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2203.13253)
+
 
 ## :rocket: News
 
