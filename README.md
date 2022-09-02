@@ -169,7 +169,7 @@ To get quantitative results, please zip the json file and upload to the [codalab
 ```
 
 ## Contact
-If you have any question, please contact me at omkar.thawakar@mbzuai.ac.ae
+Please contact me at omkar.thawakar@mbzuai.ac.ae for any queries.
 
 ## Acknowledgement
 
