@@ -151,11 +151,6 @@ class DeformableTransformerEncoderLayer(nn.Module):
         self.dropout3 = nn.Dropout(dropout)
         self.norm2 = nn.LayerNorm(d_model)
 
-        # Temporal Attention
-        self.temp_attn = MSDeformAttn(5, 4, 1, 4, 'encode')
-        self.dropout1 = nn.Dropout(dropout)
-        self.norm2 = nn.LayerNorm(5)
-
     @staticmethod
     def with_pos_embed(tensor, pos):
         return tensor if pos is None else tensor + pos
@@ -173,9 +168,7 @@ class DeformableTransformerEncoderLayer(nn.Module):
         src = self.norm1(src)
         # ffn
         src = self.forward_ffn(src)
-
-
-        return src  
+        return src
 
 
 class DeformableTransformerEncoder(nn.Module):
@@ -249,6 +242,10 @@ class DeformableTransformerDecoderLayer(nn.Module):
         self.norm3_box = nn.LayerNorm(d_model)
 
         self.time_attention_weights = nn.Linear(d_model, 1)
+        
+        # Temporal attention for box queries
+        
+        self.temp_attn_box = Temporal_Attention(dim=300)
 
     @staticmethod
     def with_pos_embed(tensor, pos):
@@ -394,6 +391,38 @@ class DeformableTransformerDecoder(nn.Module):
             return torch.stack(intermediate), torch.stack(intermediate_box), torch.stack(intermediate_reference_points), None 
 
         return output, reference_points
+    
+class Temporal_Attention(nn.Module):
+    def __init__(self, dim, num_heads=8, qkv_bias=False, qk_scale=None, attn_drop=0., proj_drop=0., with_qkv=True):
+        super().__init__()
+        self.num_heads = num_heads
+        head_dim = dim // num_heads
+        self.scale = qk_scale or head_dim ** -0.5
+        self.with_qkv = with_qkv
+        if self.with_qkv:
+           self.qkv = nn.Linear(dim, dim * 3, bias=qkv_bias)
+           self.proj = nn.Linear(dim, dim)
+           self.proj_drop = nn.Dropout(proj_drop)
+        self.attn_drop = nn.Dropout(attn_drop)
+
+    def forward(self, x):
+        B, N, C = x.shape
+        if self.with_qkv:
+           qkv = self.qkv(x).reshape(B, N, 3, self.num_heads, C // self.num_heads).permute(2, 0, 3, 1, 4)
+           q, k, v = qkv[0], qkv[1], qkv[2]
+        else:
+           qkv = x.reshape(B, N, self.num_heads, C // self.num_heads).permute(0, 2, 1, 3)
+           q, k, v  = qkv, qkv, qkv
+
+        attn = (q @ k.transpose(-2, -1)) * self.scale
+        attn = attn.softmax(dim=-1)
+        attn = self.attn_drop(attn)
+
+        x = (attn @ v).transpose(1, 2).reshape(B, N, C)
+        if self.with_qkv:
+           x = self.proj(x)
+           x = self.proj_drop(x)
+        return x
 
 
 def _get_clones(module, N):
